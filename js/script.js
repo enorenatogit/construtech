@@ -103,8 +103,8 @@ function carregarProfissionais() {
 }
 
 function handleImageError(imgElement) {
-  console.log(`Erro ao carregar a imagem: ${imgElement.src}. Usando imagem padrão 'img/construtec.png'.`);
-  imgElement.src = 'img/construtec.png';
+  console.log(`Erro ao carregar a imagem: ${imgElement.src}. Usando imagem padrão 'https://enorenatogit.github.io/construtech/img/construtec.png'.`);
+  imgElement.src = 'https://enorenatogit.github.io/construtech/img/construtec.png';
   imgElement.onerror = null;
 }
 
@@ -150,7 +150,7 @@ function salvarProfissional(event) {
     valor: parseFloat(document.getElementById('valor').value.replace(/[^\d,]/g, '').replace(',', '.')) || 0,
     contato: document.getElementById('contato').value,
     descricao: document.getElementById('descricao').value || `Serviço de ${profissao}`,
-    imagem: imagemPorProfissao[profissao] || 'img/construtec.png',
+    imagem: imagemPorProfissao[profissao] || 'https://enorenatogit.github.io/construtech/img/construtec.png',
     temCnpj: document.querySelector('input[name="temCnpj"]:checked').value,
     id: Date.now()
   };
