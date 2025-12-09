@@ -1,0 +1,325 @@
+:root {
+  --primary-color: #2f4f4f;
+  --secondary-color: #f5f5f5;
+  --accent-color: #e67e22;
+  --text-color: #1c2526;
+  --text-secondary: #5e6e6e;
+  --card-bg: rgba(245, 245, 245, 0.95);
+  --shadow-sm: 0 3px 10px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s ease-in-out;
+  --border-radius: 8px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --font-stack: 'Roboto', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-stack);
+  background: linear-gradient(135deg, var(--secondary-color), #dcdcdc);
+  color: var(--text-color);
+  min-height: 100vh;
+  line-height: 1.6;
+  padding-bottom: 120px;
+}
+
+main {
+  padding: var(--spacing-md);
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+main h1 {
+  font-size: 1.75rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+main p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+main label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: var(--spacing-md) 0 var(--spacing-sm);
+}
+
+main select {
+  width: 100%;
+  max-width: 360px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 0.95rem;
+  border: 2px solid var(--text-secondary);
+  border-radius: var(--border-radius);
+  background: white;
+  transition: var(--transition);
+}
+
+main select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(47, 79, 79, 0.2);
+  outline: none;
+}
+
+#servicos {
+  padding: var(--spacing-md);
+}
+
+#servicos h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.servico-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  border: 2px solid var(--text-secondary);
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) auto;
+  max-width: 360px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.servico-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.servico-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.profile-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  object-fit: cover;
+}
+
+.servico-card h3 {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.servico-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.servico-info .preco strong,
+.servico-info .contato strong,
+.servico-info .descricao strong {
+  font-weight: 700;
+}
+
+.servico-info .categoria strong,
+.servico-info .avaliacao strong,
+.servico-info .cnpj strong {
+  font-weight: 400;
+}
+
+.servico-info p {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  text-align: left;
+  line-height: 1.4;
+}
+
+.servico-card button {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.servico-card button:hover {
+  background: #3d6565;
+  transform: translateY(-2px);
+}
+
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--primary-color);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-sm) 0;
+  z-index: 1000;
+}
+
+nav .links {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  max-width: 100%;
+}
+
+nav .links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  transition: var(--transition);
+}
+
+nav .links li a::first-letter {
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+nav .links li a:hover,
+nav .links li a:focus {
+  color: var(--accent-color);
+  transform: scale(1.15);
+}
+
+.estrela {
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.estrela.selecionada {
+  color: rgb(224, 210, 46);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  padding: 10px;
+  border-radius: var(--border-radius);
+  width: 90%;
+  max-width: 280px;
+  box-shadow: var(--shadow-md);
+  margin: auto;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.close:hover {
+  color: var(--accent-color);
+}
+
+.modal-content h2 {
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+#avaliacao-form .question {
+  margin-bottom: 8px;
+}
+
+#avaliacao-form p {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+#avaliacao-form label {
+  margin-right: 8px;
+  font-size: 0.75rem;
+  display: inline-block;
+}
+
+#avaliacao-form input[type="radio"] {
+  margin-right: 4px;
+}
+
+#avaliacao-form button {
+  width: 100%;
+  padding: 8px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#avaliacao-form button:hover {
+  background: #3d6565;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  main h1 {
+    font-size: 2rem;
+  }
+
+  #servicos h2 {
+    font-size: 1.5rem;
+  }
+
+  .servico-card {
+    max-width: 400px;
+  }
+}
