@@ -1,0 +1,208 @@
+:root {
+  --primary-color: #2f4f4f;
+  --secondary-color: #f5f5f5;
+  --accent-color: #e67e22;
+  --text-color: #1c2526;
+  --text-secondary: #5e6e6e;
+  --card-bg: rgba(245, 245, 245, 0.95);
+  --shadow-sm: 0 3px 10px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s ease-in-out;
+  --border-radius: 8px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --font-stack: 'Roboto', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-stack);
+  background: linear-gradient(135deg, var(--secondary-color), #dcdcdc);
+  color: var(--text-color);
+  min-height: 100vh;
+  line-height: 1.6;
+  padding-bottom: 120px;
+}
+
+main {
+  padding: var(--spacing-md);
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+main h1 {
+  font-size: 1.75rem;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+#contatos {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contatos h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+  max-width: 360px;
+}
+
+.contact-item {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  border: 2px solid var(--text-secondary);
+  padding: var(--spacing-md);
+  width: 100%;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.contact-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-icon {
+  font-size: 1.75rem;
+  color: var(--primary-color);
+  margin-right: var(--spacing-md);
+}
+
+#redes-sociais {
+  padding: var(--spacing-md);
+}
+
+#redes-sociais h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.social-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  padding: 0 var(--spacing-sm);
+}
+
+.social-item {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  border: 2px solid var(--text-secondary);
+  padding: var(--spacing-md);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  animation: slideIn 0.5s ease;
+}
+
+.social-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.social-icon {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+  transition: var(--transition);
+}
+
+.social-item a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.social-item:hover .social-icon {
+  transform: scale(1.15);
+}
+
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--primary-color);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-sm) 0;
+  z-index: 1000;
+}
+
+nav .links {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  max-width: 100%;
+}
+
+nav .links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  transition: var(--transition);
+}
+
+nav .links li a::first-letter {
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+nav .links li a:hover,
+nav .links li a:focus {
+  color: var(--accent-color);
+  transform: scale(1.15);
+}
+
+@media (min-width: 768px) {
+  main h1 {
+    font-size: 2rem;
+  }
+
+  #contatos h2, #redes-sociais h2 {
+    font-size: 1.5rem;
+  }
+
+  .social-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
