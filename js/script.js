@@ -6,7 +6,7 @@ function login(event) {
   const password = document.getElementById("password").value;
 
   if (username === usuarioCorreto && password === senhaCorreta) {
-    window.location.href = "main.html";
+    window.location.href = "https://enorenatogit.github.io/construtech/main.html";
   } else {
     alert("Usuário ou senha incorretos.");
   }
