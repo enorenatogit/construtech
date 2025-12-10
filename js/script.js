@@ -1,30 +1,22 @@
-function login(event) {
-  event.preventDefault();
-  const usuarioCorreto = "";
-  const senhaCorreta = "";
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-
-  if (username === usuarioCorreto && password === senhaCorreta) {
-    // tenta usar a tag <base> se presente
-    const baseTag = document.querySelector('base');
-    let base = baseTag ? baseTag.href : null;
-
-    // se não tiver base, tenta inferir a partir da origem/rota atual
-    if (!base) {
-      base = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '/');
-    }
-
-    // garante que a URL final seja absoluta
-    const target = new URL('https://enorenatogit.github.io/construtech/main.html', base).href;
-    window.location.href = target;
-  } else {
-    alert("Usuário ou senha incorretos.");
-  }
-  return false;
-}
-
+// Validação do login — Agora usando o link como navegação permitida
 document.addEventListener('DOMContentLoaded', () => {
+  const btnLogin = document.getElementById("btnLogin");
+
+  btnLogin.addEventListener("click", function (event) {
+    const usuarioCorreto = "admin";
+    const senhaCorreta = "1234";
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    // Se incorreto → cancelamos o clique
+    if (username !== usuarioCorreto || password !== senhaCorreta) {
+      event.preventDefault();
+      alert("Usuário ou senha incorretos.");
+    }
+  });
+
+  // --- Transição do menu (mantido) ---
   const navLinks = document.querySelectorAll('nav a');
   const body = document.body;
 
