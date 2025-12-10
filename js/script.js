@@ -6,7 +6,18 @@ function login(event) {
   const password = document.getElementById("password").value;
 
   if (username === usuarioCorreto && password === senhaCorreta) {
-    window.location.href = "https://enorenatogit.github.io/construtech/main.html";
+    // tenta usar a tag <base> se presente
+    const baseTag = document.querySelector('base');
+    let base = baseTag ? baseTag.href : null;
+
+    // se não tiver base, tenta inferir a partir da origem/rota atual
+    if (!base) {
+      base = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '/');
+    }
+
+    // garante que a URL final seja absoluta
+    const target = new URL('main.html', base).href;
+    window.location.href = target;
   } else {
     alert("Usuário ou senha incorretos.");
   }
