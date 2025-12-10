@@ -16,7 +16,7 @@ function login(event) {
     }
 
     // garante que a URL final seja absoluta
-    const target = new URL('main.html', base).href;
+    const target = new URL('https://enorenatogit.github.io/construtech/main.html', base).href;
     window.location.href = target;
   } else {
     alert("Usuário ou senha incorretos.");
