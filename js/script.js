@@ -1,7 +1,7 @@
 function login(event) {
   event.preventDefault();
-  const usuarioCorreto = "admin";
-  const senhaCorreta = "1234";
+  const usuarioCorreto = "";
+  const senhaCorreta = "";
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
