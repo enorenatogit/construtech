@@ -1,6 +1,6 @@
 // Validação do login — Agora usando o link como navegação permitida
 document.addEventListener('DOMContentLoaded', () => {
-  const btnLogin = document.getElementById("btnLogin");
+  const btnLogin = document.getElementById(".btnLogin");
 
   btnLogin.addEventListener("click", function (event) {
     const usuarioCorreto = "admin";
